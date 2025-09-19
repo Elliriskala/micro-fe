@@ -1,6 +1,6 @@
 import UserInfo from './UserInfo';
 import FormSwitch from './FormSwitch';
-// TODO: Import the useUserContex hook from the mediastore mfe
+import { useUserContext } from "mediastore/UserContext";
 
 const Profile = () => {
   const { user } = useUserContext();

@@ -1,4 +1,4 @@
-import { Button } from '@/components/ui/button';
+import { Button } from "@/components/ui/button";
 import {
   Dialog,
   DialogContent,
@@ -8,10 +8,10 @@ import {
   DialogTitle,
   DialogTrigger,
   DialogClose,
-} from '@/components/ui/dialog';
-import { MediaItem } from '@sharedTypes/DBTypes';
-import { LuTrash } from 'react-icons/lu';
-// TODO: import useMedia from mediastore mfe
+} from "@/components/ui/dialog";
+import { MediaItem } from "@sharedTypes/DBTypes";
+import { LuTrash } from "react-icons/lu";
+import { useMedia } from "mediastore/MediaContext";
 
 const DeleteMedia = (props: {
   mediaItem: MediaItem;
@@ -23,7 +23,7 @@ const DeleteMedia = (props: {
 
   const deleteHandler = async () => {
     try {
-      const token = localStorage.getItem('token');
+      const token = localStorage.getItem("token");
       if (!token) {
         return;
       }
@@ -31,7 +31,7 @@ const DeleteMedia = (props: {
       alert(result.message);
       refreshMedia();
     } catch (e) {
-      console.error('delete failed', (e as Error).message);
+      console.error("delete failed", (e as Error).message);
     }
   };
 
